@@ -22,11 +22,11 @@ Route.on('/contact').render('contact')
 Route.on('/success').render('success')
 Route.get('/releases', 'AppController.getReleases')
 Route.on('/admin').render('admin/login')
-Route.on('/reg/yes/bebra/reg').render('admin/reg')
+/* Route.on('/reg/yes/bebra/reg').render('admin/reg') */
 
 Route.post('/api/login','AuthController.index').as('login')
 Route.post('/api/newApp','AppController.newApp').as('newApp')
-Route.post('/api/reg','AuthController.reg').as('reg')
+/* Route.post('/api/reg','AuthController.reg').as('reg') */
 
 Route.group(() => {
     Route.on('/admin/index').render('admin/index')
