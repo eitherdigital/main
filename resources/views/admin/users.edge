@@ -1,0 +1,75 @@
+@layout('layouts/admin')
+@section('body')
+<div class="px-4 py-5 my-5 text-center col-lg-8 mx-auto p-3 border rounded-3 bg-light">
+  <h1 class="display-5 fw-bold">Создание админа</h1><br>
+  <form class="p-5 rounded-3 bg-light" action="{{ route('newAdmin') }}" method="post">
+    {{ csrfField() }}
+    <div class="form-floating mb-3">
+      <input type="text" name="username" class="form-control" id="flotingName" placeholder="Логин" required>
+      <label for="flotingName">* Логин</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="email" name="email" class="form-control" id="flotingName" placeholder="Email" required>
+      <label for="flotingName">* Email</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="text" name="password" class="form-control" id="flotingName" placeholder="Пароль" required>
+      <label for="flotingName">* Пароль</label>
+    </div>
+    <button class="w-100 btn btn-lg btn-outline-primary" type="submit">Создать</button>
+  </form>
+</div>
+<div class="px-4 py-5 my-5 text-center">
+  <h1 class="display-5 fw-bold">Все пользователи</h1>
+  <div class="col-lg-8 mx-auto">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Логин</th>
+        <th scope="col">Email</th>
+        <th scope="col">Действия</th>
+      </tr>
+      </thead>
+      <tbody>
+      @each(item in data)
+      <tr>
+        <td>{{ item.id }}</td>
+        <td>{{ item.username }}</td>
+        <td>{{ item.email }}</td>
+        <td><a href="#" data-bs-toggle="modal" data-bs-target="#passwordModal_{{ item.id }}">Изменить</a>, <a href="/api/deleteUser/{{ item.id }}">Удалить</a></td>
+      </tr>
+      <div class="modal fade" id="passwordModal_{{ item.id }}" tabindex="-1" aria-labelledby="deleteModal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="passwordLabel">{{ item.username }}</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form class="" action="/api/editUser/{{ item.id }}" method="POST">
+                {{ csrfField() }}
+                <div class="form-floating mb-3">
+                  <input type="text" name="username" class="form-control" id="flotingUsername" placeholder="New login">
+                  <label for="flotingUsername">Новый логин</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" name="email" class="form-control" id="flotingEmail" placeholder="New email">
+                  <label for="flotingPassword">Новый Email</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" name="password" class="form-control" id="flotingPassword" placeholder="New password">
+                  <label for="flotingPassword">Новый пароль</label>
+                </div>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Редактировать</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      @endeach
+      </tbody>
+    </table>
+  </div>
+</div>
+@endsection

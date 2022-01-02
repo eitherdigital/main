@@ -1,0 +1,32 @@
+<div class="container">
+  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+    <a href="/admin/index" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+      <b>FIRECT | Admin</b>
+    </a>
+
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+      <li><a href="/admin/index" class="nav-link px-2 link-dark">Главная</a></li>
+      <li><a href="/admin/releases" class="nav-link px-2 link-dark">Релизы</a></li>
+      <li><a href="/admin/new" class="nav-link px-2 link-dark">Новый релиз</a></li>
+      <li><a href="/admin/users" class="nav-link px-2 link-dark">Администраторы</a></li>
+    </ul>
+
+    <div class="col-md-3 text-end">
+      <div class="dropdown">
+        <a class="btn btn-outline-primary me-2" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+          {{ auth.user.username}}
+        </a>
+
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <li>
+            <form class="" action="{{ route('logout') }}" method="POST" id="logout">
+              {{ csrfField() }}
+              <a class="dropdown-item" href="" onClick="document.getElementById('logout').submit(); return false;">Выйти</a>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </header>
+</div>

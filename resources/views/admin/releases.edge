@@ -1,0 +1,34 @@
+@layout('layouts/admin')
+@section('body')
+<div class="px-4 py-5 my-5 text-center">
+  <h1 class="display-5 fw-bold">Все релизы</h1>
+  <div class="col-lg-8 mx-auto">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Название</th>
+        <th scope="col">Описание</th>
+        <th scope="col">Дата релиза</th>
+        <th scope="col">Смарт-линк</th>
+        <th scope="col">Обложка</th>
+        <th scope="col">Действия</th>
+      </tr>
+      </thead>
+      <tbody>
+      @each(item in data)
+      <tr>
+        <td>{{ item.id }}</td>
+        <td>{{ item.artist }} - {{ item.title }}</td>
+        <td>{{ item.promo }}</td>
+        <td>{{ item.date }}</td>
+        <td><a href="{{ item.link }}">{{ item.link }}</a></td>
+        <td><img width="50" src="{{ item.cover }}"></td>
+        <td><a href="/api/deleteRelease/{{ item.id }}">Удалить</a></td>
+      </tr>
+      @endeach
+      </tbody>
+    </table>
+  </div>
+</div>
+@endsection

@@ -1,0 +1,63 @@
+@layout('layouts/main')
+@section('body')
+<div class="container my-5">
+  <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+    <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+      <h1 class="display-4 fw-bold lh-1">Firect Music</h1>
+      <p class="lead">музыкальный лейбл, который учтет все предпочтения артиста и постарается максимально помочь с продвижением ❤️</p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+        <button type="button" onclick="location.href='/releases'" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Наш каталог</button>
+        <button type="button" onclick="location.href='/contact'" class="btn btn-outline-secondary btn-lg px-4">Связаться</button>
+      </div>
+    </div>
+    <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+        <img class="rounded-lg-3" src="/logo.png" alt="" width="400">
+    </div>
+  </div>
+</div>
+<div class="container py-5" id="custom-cards">
+  <h2 class="pb-2 border-bottom">Наши артисты</h2>
+
+  <div class="row row-cols-3 align-items-stretch py-5">
+    <div class="col">
+      <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://avatars.yandex.net/get-music-content/4382102/b5599b89.a.18123989-1/1000x1000');background-size: 440px;">
+        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+          <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Merlin White</h2>
+          <ul class="d-flex list-unstyled mt-auto">
+            <li class="me-auto">
+              <p>С нами с 2020</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/img/tsuki.jpg');background-size: 440px;">
+        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+          <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">ayo tsuki</h2>
+          <ul class="d-flex list-unstyled mt-auto">
+            <li class="me-auto">
+              <p>С нами с 2021</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/img/bl.jpg');background-size: 440px;">
+        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+          <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">wdiiie</h2>
+          <ul class="d-flex list-unstyled mt-auto">
+            <li class="me-auto">
+              <p>С нами с 2021</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h2 class="pb-2">И так далее</h2>
+</div>
+@endsection
