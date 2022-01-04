@@ -14,3 +14,7 @@ database/*.sqlite
 # VSCode & Webstorm history directories
 .history
 .idea
+
+public/covers
+public/robots.txt
+public/sitemap.xml
