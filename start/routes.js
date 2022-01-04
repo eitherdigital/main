@@ -38,6 +38,6 @@ Route.group(() => {
     Route.get('/api/deleteUser/:id','AdminController.deleteUser').as('deleteUser')
     Route.post('/api/editUser/:id','AdminController.editUser').as('editUser')
     Route.post('/api/adminReg','AdminController.reg').as('newAdmin')
-    Route.get('/api/deleteRelease/:id','AdminController.deleteUser').as('deleteUser')
+    Route.get('/api/deleteRelease/:id','AdminController.deleteRelease').as('deleteUser')
     Route.post('/api/newRelease','AdminController.newRelease').as('newRelease')
 }).middleware(['auth'])
