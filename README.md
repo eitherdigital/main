@@ -1,31 +1,24 @@
-# Adonis fullstack application
+## Описание
 
-This is the fullstack boilerplate for AdonisJs, it comes pre-configured with.
+Наша главная страница с админкой, релизами и отправкой сообщения через форму в телеграм.
+<br />
 
-1. Bodyparser
-2. Session
-3. Authentication
-4. Web security middleware
-5. CORS
-6. Edge template engine
-7. Lucid ORM
-8. Migrations and seeds
+Simple project Adonis 4.0
 
-## Setup
+## Требования
+- [NodeJS](https://nodejs.org/) 8.0 or greater
+- [NPM](https://www.npmjs.com/) 3.0 or greater
+- AdonisJS 4.0 (`npm i -g @adonisjs/cli`)
 
-Use the adonis command to install the blueprint
+## Установка
+- Клонируйте этот проект себе в удобную папку
+- Перейдите в корневую папку и установите зависимость с помощью команды `npm install`
+- Переменуйте `.env.example` в `.env`
+- Установите свою собственную переменную конфигурации
+- Сгенерируйте случайный секретный ключ с помощью команды `adonis key:generate`
+- Запустите проект с помощью комманды `adonis serve --dev`
 
-```bash
-adonis new yardstick
-```
-
-or manually clone the repo and then run `npm install`.
-
-
-### Migrations
-
-Run the following command to run startup migrations.
-
-```js
-adonis migration:run
-```
+## Ссылки
+- [Наш сайт](https://firectmusic.ru)
+- [Главный разработчик данного проекта](https://kirillsaint.xyz)
+- [Спасибо за помощь](https://github.com/clownless)
